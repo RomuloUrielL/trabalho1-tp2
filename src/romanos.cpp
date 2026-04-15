@@ -6,33 +6,44 @@
 int romanos_para_decimal(char const * num_romano)
 {
   int sum = 0;
+  int countV = 0;
+  int countL = 0;
+  int countD = 0;
   std::vector<int> decimals;
   int lenght = strlen(num_romano);
   if(lenght > 30){
     return -1;
   }
-  if(strcmp(num_romano, "IIII") == 0){
-    return -1;
-  }
-  if(strcmp(num_romano, "XXXX") == 0){
-    return -1;
-  }
-  if(strcmp(num_romano, "CCCC") == 0){
-    return -1;
-  }
-  if(strcmp(num_romano, "MMMM") == 0){
-    return -1;
-  }
-  if(strcmp(num_romano, "VV") == 0){
-    return -1;
-  }
-  if(strcmp(num_romano, "LL") == 0){
-    return -1;
-  }
-  if(strcmp(num_romano, "DD") == 0){
-    return -1;
-  }
+  
   for(int i = 0; i < lenght; i++){ 
+
+    if((i + 3) <= lenght){
+      if(num_romano[i] == ('I'|| 'X' || 'C' || 'M')){
+        if(num_romano[i] == num_romano[i + 1] == num_romano[i + 2] == num_romano[i + 3]){
+          return -1;
+        }
+      } else if(num_romano[i] == ('V'|| 'L' || 'D')){
+        if(num_romano[i] == 'V'){
+          countV++;
+          if(countV > 1){
+            return -1;
+          }
+        }
+        if(num_romano[i] == 'L'){
+          countL++;
+          if(countL > 1){
+            return -1;
+          }
+        }
+        if(num_romano[i] == 'D'){
+          countD++;
+          if(countD > 1){
+            return -1;
+          }
+        }
+      }
+    }
+
     switch(num_romano[i]){
       case 'I':
         decimals.push_back(1);
