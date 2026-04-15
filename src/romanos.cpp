@@ -8,6 +8,9 @@ int romanos_para_decimal(char const * num_romano)
   int sum = 0;
   std::vector<int> decimals;
   int lenght = strlen(num_romano);
+  if(lenght > 30){
+    return -1;
+  }
   for(int i = 0; i < lenght; i++){ 
     switch(num_romano[i]){
       case 'I':
