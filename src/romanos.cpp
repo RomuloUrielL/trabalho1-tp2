@@ -17,9 +17,14 @@ int romanos_para_decimal(char const * num_romano)
   
   for(int i = 0; i < lenght; i++){ 
 
-    if((i + 3) <= lenght){
-      if(num_romano[i] == ('I'|| 'X' || 'C' || 'M')){
-        if(num_romano[i] == num_romano[i + 1] == num_romano[i + 2] == num_romano[i + 3]){
+    if((i + 3) < lenght){
+      if(num_romano[i] == 'I' ||
+        num_romano[i] == 'X' ||
+        num_romano[i] == 'C' ||
+        num_romano[i] == 'M'){
+        if(num_romano[i] == num_romano[i + 1] &&
+          num_romano[i] == num_romano[i + 2] &&
+          num_romano[i] == num_romano[i + 3]){
           return -1;
         }
       } else if(num_romano[i] == ('V'|| 'L' || 'D')){
