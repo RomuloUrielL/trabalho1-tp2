@@ -39,4 +39,18 @@ TEST_CASE("Numeros romanos - verificar tamanho do vetor", "[romanos]") {
     CHECK(romanos_para_decimal("CXXXI") == 131);
 }
 
+TEST_CASE("Numeros romanos - verificar repeticao de caracteres", "[romanos]") {
+    CHECK(romanos_para_decimal("IIII") == -1);
+    CHECK(romanos_para_decimal("III") == 3);
+    CHECK(romanos_para_decimal("XXXX") == -1);
+    CHECK(romanos_para_decimal("XXX") == 30);
+    CHECK(romanos_para_decimal("CCCC") == -1);
+    CHECK(romanos_para_decimal("CCC") == 300);
+    CHECK(romanos_para_decimal("MMMM") == -1);
+    CHECK(romanos_para_decimal("MMM") == 3000);
+    CHECK(romanos_para_decimal("VV") == -1);
+    CHECK(romanos_para_decimal("LL") == -1);
+    CHECK(romanos_para_decimal("DD") == -1);
+}
+
 #endif

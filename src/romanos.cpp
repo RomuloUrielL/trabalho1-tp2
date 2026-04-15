@@ -11,6 +11,27 @@ int romanos_para_decimal(char const * num_romano)
   if(lenght > 30){
     return -1;
   }
+  if(strcmp(num_romano, "IIII") == 0){
+    return -1;
+  }
+  if(strcmp(num_romano, "XXXX") == 0){
+    return -1;
+  }
+  if(strcmp(num_romano, "CCCC") == 0){
+    return -1;
+  }
+  if(strcmp(num_romano, "MMMM") == 0){
+    return -1;
+  }
+  if(strcmp(num_romano, "VV") == 0){
+    return -1;
+  }
+  if(strcmp(num_romano, "LL") == 0){
+    return -1;
+  }
+  if(strcmp(num_romano, "DD") == 0){
+    return -1;
+  }
   for(int i = 0; i < lenght; i++){ 
     switch(num_romano[i]){
       case 'I':
