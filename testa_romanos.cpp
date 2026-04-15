@@ -17,11 +17,11 @@ TEST_CASE("Numeros romanos - algarismos unicos", "[romanos]") {
 }
 
 
-TEST_CASE( "Numeros romanos - algarismos invalidos", "[romanos]" ) {
-    CHECK( romanos_para_decimal("G") == -1 );
-    CHECK( romanos_para_decimal("i") == -1 );  
-    CHECK( romanos_para_decimal("7") == -1 ); 
-    CHECK( romanos_para_decimal("@") == -1 );   
+TEST_CASE("Numeros romanos - algarismos invalidos", "[romanos]") {
+    CHECK(romanos_para_decimal("G") == -1);
+    CHECK(romanos_para_decimal("i") == -1);
+    CHECK(romanos_para_decimal("7") == -1);
+    CHECK(romanos_para_decimal("@") == -1);
 }
 
- #endif
+#endif
