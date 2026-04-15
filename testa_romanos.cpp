@@ -1,10 +1,12 @@
-#define CATCH_CONFIG_MAIN 
+// Copyright 2026 Romulo Uriel
+#ifndef CATCH_CONFIG_MAIN
+#define CATCH_CONFIG_MAIN
 #define CATCH_CONFIG_NO_POSIX_SIGNALS
-#include "catch.hpp"
-#include "romanos.hpp"
+#include "include/catch.hpp"
+#include "include/romanos.hpp"
 
 
-TEST_CASE( "Numeros romanos - algarismos unicos", "[romanos]" ) {
+TEST_CASE("Numeros romanos - algarismos unicos", "[romanos]") {
     CHECK(romanos_para_decimal("I") == 1);
     CHECK(romanos_para_decimal("V") == 5);
     CHECK(romanos_para_decimal("X") == 10);
@@ -25,3 +27,5 @@ TEST_CASE( "Numeros romanos - algarismos inv�lidos", "[romanos]" ) {
     
 }
  */
+
+ #endif
