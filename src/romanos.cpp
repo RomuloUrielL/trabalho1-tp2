@@ -1,8 +1,7 @@
 // Copyright 2026 Romulo Uriel
 
 #include "romanos.hpp"
-#include <vector>
-std::vector<int> romanos_para_decimal(char const * num_romano)
+int romanos_para_decimal(char const * num_romano)
 {
   switch(*num_romano){
     case 'I':
@@ -29,5 +28,6 @@ std::vector<int> romanos_para_decimal(char const * num_romano)
     default:
       return -1;
   }
+  return -1; 
 }
  

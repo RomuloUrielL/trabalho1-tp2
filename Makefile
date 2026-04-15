@@ -19,7 +19,7 @@ gcov: testa_romanos.cpp   src/romanos.cpp include/romanos.hpp
 	gcov *.cpp	
 	
 debug: testa_romanos.cpp   src/romanos.cpp include/romanos.hpp 
-	g++ -std=c++11 -Wall -Iinclude -g -c romanos.cpp
+	g++ -std=c++11 -Wall -Iinclude -g -c src/romanos.cpp
 	g++ -std=c++11 -Wall -Iinclude  -g romanos.o testa_romanos.cpp -o testa_romanos
 	gdb testa_romanos
 	

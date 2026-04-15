@@ -4,7 +4,7 @@
 #define CATCH_CONFIG_NO_POSIX_SIGNALS
 #include "include/catch.hpp"
 #include "include/romanos.hpp"
-#include <vector>
+
 
 TEST_CASE("Numeros romanos - algarismos unicos", "[romanos]") {
     CHECK(romanos_para_decimal("I") == 1);
@@ -24,9 +24,11 @@ TEST_CASE("Numeros romanos - algarismos invalidos", "[romanos]") {
     CHECK(romanos_para_decimal("@") == -1);
 }
 
-TEST_CASE("Numeros romanos - armazenar em um vetor de inteiros", "[romanos]") {
-    std::vector<int> vetor;
-    CHECK(romanos_para_decimal("III") == vetor);
+TEST_CASE("Numeros romanos - soma dos algarismos sem sinal", "[romanos]") {
+    CHECK(romanos_para_decimal("III") == 3);
+    CHECK(romanos_para_decimal("XX") == 20);
+    CHECK(romanos_para_decimal("VI") == 6);
+    CHECK(romanos_para_decimal("VIII") == 8);
 }
 
 #endif
