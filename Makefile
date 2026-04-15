@@ -13,7 +13,7 @@ cpplint: testa_romanos.cpp   src/romanos.cpp include/romanos.hpp
 	cpplint  --filter=-readability/check --exclude=catch.hpp  *.*
 	
 gcov: testa_romanos.cpp   src/romanos.cpp include/romanos.hpp 
-	g++ -std=c++11 -Wall -Wall -Iinclude -fprofile-arcs -ftest-coverage -c romanos.cpp
+	g++ -std=c++11 -Wall -Wall -Iinclude -fprofile-arcs -ftest-coverage -c src/romanos.cpp
 	g++ -std=c++11 -Wall -Iinclude -fprofile-arcs -ftest-coverage romanos.o testa_romanos.cpp -o testa_romanos
 	./testa_romanos
 	gcov *.cpp	
