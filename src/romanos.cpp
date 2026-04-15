@@ -1,33 +1,43 @@
 // Copyright 2026 Romulo Uriel
 
 #include "romanos.hpp"
+#include <vector>
+#include <cstring>
 int romanos_para_decimal(char const * num_romano)
 {
-  switch(*num_romano){
-    case 'I':
-      return 1;
-      break;
-    case 'V':
-      return 5;
-      break;
-    case 'X':
-      return 10;
-      break;
-    case 'L':
-      return 50;
-      break;
-    case 'C':
-      return 100;
-      break;
-    case 'D':
-      return 500;
-      break;
-    case 'M':
-      return 1000;
-      break;
-    default:
-      return -1;
+  int sum = 0;
+  std::vector<int> decimals;
+  int lenght = strlen(num_romano);
+  for(int i = 0; i < lenght; i++){
+    switch(num_romano[i]){
+      case 'I':
+        decimals.push_back(1);
+        break;
+      case 'V':
+        decimals.push_back(5);
+        break;
+      case 'X':
+        decimals.push_back(10);
+        break;
+      case 'L':
+        decimals.push_back(50);
+        break;
+      case 'C':
+        decimals.push_back(100);
+        break;
+      case 'D':
+        decimals.push_back(500);
+        break;
+      case 'M':
+        decimals.push_back(1000);
+        break;
+      default:
+        return -1;
+    }
   }
-  return -1; 
+  for(int element : decimals){
+    sum += element;
+  }
+  return sum;
 }
  
