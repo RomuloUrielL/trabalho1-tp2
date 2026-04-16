@@ -61,4 +61,15 @@ TEST_CASE("Numeros romanos - adicionar sinal nos numeros que devem ser negativos
     CHECK(romanos_para_decimal("LIX") == 59);
 }
 
+TEST_CASE("Numeros romanos - teste final", "[romanos]") {
+    CHECK(romanos_para_decimal("I") == 1);
+    CHECK(romanos_para_decimal("XIV") == 14);
+    CHECK(romanos_para_decimal("LXXIII") == 73);
+    CHECK(romanos_para_decimal("CXI") == 111);
+    CHECK(romanos_para_decimal("CCCLXXVIII") == 378);
+    CHECK(romanos_para_decimal("DLXIX") == 569);
+    CHECK(romanos_para_decimal("DCCCXVII") == 817);
+    CHECK(romanos_para_decimal("CMLXXXIX") == 989);
+}
+
 #endif
