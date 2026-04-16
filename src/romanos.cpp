@@ -37,7 +37,7 @@ int romanos_para_decimal(char const * num_romano)
           num_romano[i++] == 'L' ||
           num_romano[i++] == 'C' ||
           num_romano[i++] == 'D' ||
-          num_romano[i++] == 'M' ||
+          num_romano[i++] == 'M'
         ){
           decimals.push_back(-1);
         } else{
@@ -53,7 +53,7 @@ int romanos_para_decimal(char const * num_romano)
           num_romano[i++] == 'L' ||
           num_romano[i++] == 'C' ||
           num_romano[i++] == 'D' ||
-          num_romano[i++] == 'M' ||
+          num_romano[i++] == 'M'
         ){
           decimals.push_back(-5);
         } else{
@@ -64,7 +64,7 @@ int romanos_para_decimal(char const * num_romano)
         if(num_romano[i++] == 'L' ||
           num_romano[i++] == 'C' ||
           num_romano[i++] == 'D' ||
-          num_romano[i++] == 'M' ||
+          num_romano[i++] == 'M'
         ){
           decimals.push_back(-10);
         } else{
@@ -78,7 +78,7 @@ int romanos_para_decimal(char const * num_romano)
         }
         if(num_romano[i++] == 'C' ||
           num_romano[i++] == 'D' ||
-          num_romano[i++] == 'M' ||
+          num_romano[i++] == 'M'
         ){
           decimals.push_back(-50);
       } else {
@@ -87,7 +87,7 @@ int romanos_para_decimal(char const * num_romano)
         break;
       case 'C':
         if(num_romano[i++] == 'D' ||
-          num_romano[i++] == 'M' ||
+          num_romano[i++] == 'M'
         ){
           decimals.push_back(-100);
         }
@@ -98,7 +98,7 @@ int romanos_para_decimal(char const * num_romano)
         if(countD > 1){
         return -1;
           }
-        if(num_romano[i++] == 'M' ||){
+        if(num_romano[i++] == 'M'){
           decimals.push_back(-500);
         }
         decimals.push_back(500);
