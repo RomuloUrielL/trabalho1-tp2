@@ -27,25 +27,27 @@ int romanos_para_decimal(char const * num_romano)
           num_romano[i] == num_romano[i + 3]){
           return -1;
         }
-      } else if(num_romano[i] == ('V'|| 'L' || 'D')){
-        if(num_romano[i] == 'V'){
-          countV++;
-          if(countV > 1){
-            return -1;
+      } else if(num_romano[i] == 'V' ||
+                num_romano[i] == 'L' ||
+                num_romano[i] == 'D'){
+          if(num_romano[i] == 'V'){
+            countV++;
+            if(countV > 1){
+              return -1;
+            }
           }
-        }
-        if(num_romano[i] == 'L'){
-          countL++;
-          if(countL > 1){
-            return -1;
+          if(num_romano[i] == 'L'){
+            countL++;
+            if(countL > 1){
+              return -1;
+            }
           }
-        }
-        if(num_romano[i] == 'D'){
-          countD++;
-          if(countD > 1){
-            return -1;
+          if(num_romano[i] == 'D'){
+            countD++;
+            if(countD > 1){
+              return -1;
+            }
           }
-        }
       }
     }
 
