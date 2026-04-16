@@ -94,8 +94,9 @@ int romanos_para_decimal(char const * num_romano)
           num_romano[i+1] == 'M'
         ){
           decimals.push_back(-100);
+        } else {
+          decimals.push_back(100);
         }
-        decimals.push_back(100);
         break;
       case 'D':
         countD++;
