@@ -31,7 +31,7 @@ cppcheck:
 	src/*.cpp testa_romanos.cpp
 
 valgrind: testa_romanos
-	valgrind --leak-check=yes --log-file=valgrind.rpt testa_romanos
+	valgrind --leak-check=yes --log-file=valgrind.rpt ./testa_romanos
 
 romanos.o : src/romanos.cpp include/romanos.hpp
 	g++ -std=c++11 -Wall -Iinclude -c src/romanos.cpp
