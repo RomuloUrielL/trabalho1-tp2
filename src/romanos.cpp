@@ -29,42 +29,36 @@ int romanos_para_decimal(char const * num_romano)
         }
       } 
     }
-    if(num_romano[i] == 'V'){
-      countV++;
-        if(countV > 1){
-          return -1;
-        }
-    }
-    if(num_romano[i] == 'L'){
-      countL++;
-      if(countL > 1){
-        return -1;
-      }
-    }
-    if(num_romano[i] == 'D'){
-      countD++;
-      if(countD > 1){
-        return -1;
-          }
-    }
-
+    
     switch(num_romano[i]){
       case 'I':
         decimals.push_back(1);
         break;
       case 'V':
+        countV++;
+        if(countV > 1){
+          return -1;
+        }
         decimals.push_back(5);
         break;
       case 'X':
         decimals.push_back(10);
         break;
       case 'L':
+        countL++;
+        if(countL > 1){
+          return -1;
+        }
         decimals.push_back(50);
         break;
       case 'C':
         decimals.push_back(100);
         break;
       case 'D':
+        countD++;
+        if(countD > 1){
+        return -1;
+          }
         decimals.push_back(500);
         break;
       case 'M':
