@@ -32,26 +32,65 @@ int romanos_para_decimal(char const * num_romano)
     
     switch(num_romano[i]){
       case 'I':
-        decimals.push_back(1);
+        if(num_romano[i++] == 'V' ||
+          num_romano[i++] == 'X' ||
+          num_romano[i++] == 'L' ||
+          num_romano[i++] == 'C' ||
+          num_romano[i++] == 'D' ||
+          num_romano[i++] == 'M' ||
+        ){
+          decimals.push_back(-1);
+        } else{
+          decimals.push_back(1);
+        }
         break;
       case 'V':
         countV++;
         if(countV > 1){
           return -1;
         }
-        decimals.push_back(5);
+        if(num_romano[i++] == 'X' ||
+          num_romano[i++] == 'L' ||
+          num_romano[i++] == 'C' ||
+          num_romano[i++] == 'D' ||
+          num_romano[i++] == 'M' ||
+        ){
+          decimals.push_back(-5);
+        } else{
+          decimals.push_back(5);
+        }
         break;
       case 'X':
-        decimals.push_back(10);
+        if(num_romano[i++] == 'L' ||
+          num_romano[i++] == 'C' ||
+          num_romano[i++] == 'D' ||
+          num_romano[i++] == 'M' ||
+        ){
+          decimals.push_back(-10);
+        } else{
+          decimals.push_back(10);
+        }
         break;
       case 'L':
         countL++;
         if(countL > 1){
           return -1;
         }
+        if(num_romano[i++] == 'C' ||
+          num_romano[i++] == 'D' ||
+          num_romano[i++] == 'M' ||
+        ){
+          decimals.push_back(-50);
+      } else {
         decimals.push_back(50);
+      } 
         break;
       case 'C':
+        if(num_romano[i++] == 'D' ||
+          num_romano[i++] == 'M' ||
+        ){
+          decimals.push_back(-100);
+        }
         decimals.push_back(100);
         break;
       case 'D':
@@ -59,6 +98,9 @@ int romanos_para_decimal(char const * num_romano)
         if(countD > 1){
         return -1;
           }
+        if(num_romano[i++] == 'M' ||){
+          decimals.push_back(-500);
+        }
         decimals.push_back(500);
         break;
       case 'M':
