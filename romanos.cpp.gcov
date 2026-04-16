@@ -1,0 +1,80 @@
+        -:    0:Source:src/romanos.cpp
+        -:    0:Graph:romanos.gcno
+        -:    0:Data:romanos.gcda
+        -:    0:Runs:4
+        -:    1:// Copyright 2026 Romulo Uriel
+        -:    2:
+        -:    3:#include "romanos.hpp"
+        -:    4:#include <vector>
+        -:    5:#include <cstring>
+      124:    6:int romanos_para_decimal(char const * num_romano)
+        -:    7:{
+      124:    8:  int sum = 0;
+      124:    9:  int countV = 0;
+      124:   10:  int countL = 0;
+      124:   11:  int countD = 0;
+      124:   12:  std::vector<int> decimals;
+      124:   13:  int lenght = strlen(num_romano);
+      124:   14:  if(lenght > 30){
+        8:   15:    return -1;
+        -:   16:  }
+        -:   17:  
+      368:   18:  for(int i = 0; i < lenght; i++){ 
+        -:   19:
+      296:   20:    if((i + 3) < lenght){
+      104:   21:      if(num_romano[i] == 'I' ||
+       76:   22:        num_romano[i] == 'X' ||
+       56:   23:        num_romano[i] == 'C' ||
+       36:   24:        num_romano[i] == 'M'){
+       84:   25:        if(num_romano[i] == num_romano[i + 1] &&
+       60:   26:          num_romano[i] == num_romano[i + 2] &&
+       40:   27:          num_romano[i] == num_romano[i + 3]){
+       16:   28:          return -1;
+        -:   29:        }
+        -:   30:      } 
+        -:   31:    }
+        -:   32:    
+      280:   33:    switch(num_romano[i]){
+       84:   34:      case 'I':
+       84:   35:        decimals.push_back(1);
+       84:   36:        break;
+       28:   37:      case 'V':
+       28:   38:        countV++;
+       28:   39:        if(countV > 1){
+        4:   40:          return -1;
+        -:   41:        }
+       24:   42:        decimals.push_back(5);
+       24:   43:        break;
+       60:   44:      case 'X':
+       60:   45:        decimals.push_back(10);
+       60:   46:        break;
+       16:   47:      case 'L':
+       16:   48:        countL++;
+       16:   49:        if(countL > 1){
+        4:   50:          return -1;
+        -:   51:        }
+       12:   52:        decimals.push_back(50);
+       12:   53:        break;
+       32:   54:      case 'C':
+       32:   55:        decimals.push_back(100);
+       32:   56:        break;
+       16:   57:      case 'D':
+       16:   58:        countD++;
+       16:   59:        if(countD > 1){
+        4:   60:        return -1;
+        -:   61:          }
+       12:   62:        decimals.push_back(500);
+       12:   63:        break;
+       28:   64:      case 'M':
+       28:   65:        decimals.push_back(1000);
+       28:   66:        break;
+       16:   67:      default:
+       16:   68:        return -1;
+        -:   69:    }
+        -:   70:  }
+      312:   71:  for(int element : decimals){
+      240:   72:    sum += element;
+        -:   73:  }
+       72:   74:  return sum;
+      124:   75:}
+        -:   76: 
