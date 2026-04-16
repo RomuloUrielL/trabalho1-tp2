@@ -53,4 +53,12 @@ TEST_CASE("Numeros romanos - verificar repeticao de caracteres", "[romanos]") {
     CHECK(romanos_para_decimal("DD") == -1);
 }
 
+TEST_CASE("Numeros romanos - adicionar sinal nos numeros que devem ser negativos", "[romanos]") {
+    CHECK(romanos_para_decimal("IV") == 4);
+    CHECK(romanos_para_decimal("IX") == 9);
+    CHECK(romanos_para_decimal("XIX") == 19);
+    CHECK(romanos_para_decimal("XLV") == 45);
+    CHECK(romanos_para_decimal("LIX") == 59);
+}
+
 #endif
