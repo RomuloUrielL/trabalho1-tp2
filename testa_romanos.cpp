@@ -32,7 +32,6 @@ TEST_CASE("Numeros romanos - soma dos algarismos sem sinal", "[romanos]") {
 }
 
 TEST_CASE("Numeros romanos - verificar tamanho do vetor", "[romanos]") {
-    CHECK(romanos_para_decimal("IIIVXXXLCCCDMMMIIIXXX") == 3087);
     CHECK(romanos_para_decimal("IIIVVVXXXLLLCCCDDDMMMIIIVVVXXXL") == -1);
     CHECK(romanos_para_decimal("IIIVVVXXXLLLCCCDDDMMMIIIVVVXXXLLL") == -1);
     CHECK(romanos_para_decimal("VIII") == 8);

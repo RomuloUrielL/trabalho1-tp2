@@ -59,7 +59,7 @@ int romanos_para_decimal(char const * num_romano)
           num_romano[i+1] == 'D' ||
           num_romano[i+1] == 'M'
         ){
-          decimals.push_back(-5);
+          return -1;
         } else{
           decimals.push_back(5);
         }
@@ -84,7 +84,7 @@ int romanos_para_decimal(char const * num_romano)
           num_romano[i+1] == 'D' ||
           num_romano[i+1] == 'M'
         ){
-          decimals.push_back(-50);
+          return -1;
       } else {
         decimals.push_back(50);
       } 
@@ -104,7 +104,7 @@ int romanos_para_decimal(char const * num_romano)
         return -1;
           }
         if(num_romano[i+1] == 'M'){
-          decimals.push_back(-500);
+          return -1;
         }
         decimals.push_back(500);
         break;
