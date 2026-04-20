@@ -61,14 +61,53 @@ TEST_CASE("Numeros romanos - adicionar sinal nos numeros que devem ser negativos
 }
 
 TEST_CASE("Numeros romanos - teste final", "[romanos]") {
-    CHECK(romanos_para_decimal("I") == 1);
-    CHECK(romanos_para_decimal("XIV") == 14);
-    CHECK(romanos_para_decimal("LXXIII") == 73);
-    CHECK(romanos_para_decimal("CXI") == 111);
-    CHECK(romanos_para_decimal("CCCLXXVIII") == 378);
-    CHECK(romanos_para_decimal("DLXIX") == 569);
-    CHECK(romanos_para_decimal("DCCCXVII") == 817);
-    CHECK(romanos_para_decimal("CMLXXXIX") == 989);
+CHECK(romanos_para_decimal("I") == 1);
+CHECK(romanos_para_decimal("V") == 5);
+CHECK(romanos_para_decimal("X") == 10);
+CHECK(romanos_para_decimal("L") == 50);
+CHECK(romanos_para_decimal("C") == 100);
+CHECK(romanos_para_decimal("D") == 500);
+CHECK(romanos_para_decimal("M") == 1000);
+CHECK(romanos_para_decimal("XIV") == 14);
+CHECK(romanos_para_decimal("LXXIII") == 73);
+CHECK(romanos_para_decimal("CXI") == 111);
+CHECK(romanos_para_decimal("CCCLXXVIII") == 378);
+CHECK(romanos_para_decimal("DLXIX") == 569);
+CHECK(romanos_para_decimal("DCCCXVII") == 817);
+CHECK(romanos_para_decimal("CMLXXXIX") == 989);
+CHECK(romanos_para_decimal("IV") == 4);
+CHECK(romanos_para_decimal("IX") == 9);
+CHECK(romanos_para_decimal("XL") == 40);
+CHECK(romanos_para_decimal("XC") == 90);
+CHECK(romanos_para_decimal("CD") == 400);
+CHECK(romanos_para_decimal("CM") == 900);
+CHECK(romanos_para_decimal("XIX") == 19);
+CHECK(romanos_para_decimal("XLIV") == 44);
+CHECK(romanos_para_decimal("XCIX") == 99);
+CHECK(romanos_para_decimal("CDXLIV") == 444);
+CHECK(romanos_para_decimal("CMXCIX") == 999);
+CHECK(romanos_para_decimal("MCMXCIV") == 1994);
+CHECK(romanos_para_decimal("II") == 2);
+CHECK(romanos_para_decimal("III") == 3);
+CHECK(romanos_para_decimal("XX") == 20);
+CHECK(romanos_para_decimal("XXX") == 30);
+CHECK(romanos_para_decimal("CCC") == 300);
+CHECK(romanos_para_decimal("MMM") == 3000);
+CHECK(romanos_para_decimal("I") == 1);
+CHECK(romanos_para_decimal("MMMCMXCIX") == 3999);
+CHECK(romanos_para_decimal("MMXXIV") == 2024);
+CHECK(romanos_para_decimal("MCMLXXXIV") == 1984);
+CHECK(romanos_para_decimal("MMMDCCCLXXXVIII") == 3888);
+CHECK(romanos_para_decimal("IIII") == -1);
+CHECK(romanos_para_decimal("VV") == -1);
+CHECK(romanos_para_decimal("LL") == -1);
+CHECK(romanos_para_decimal("DD") == -1);
+CHECK(romanos_para_decimal("VX") == -1);
+CHECK(romanos_para_decimal("LC") == -1);
+CHECK(romanos_para_decimal("DM") == -1);
+CHECK(romanos_para_decimal("A") == -1);
+CHECK(romanos_para_decimal("123") == -1);
+CHECK(romanos_para_decimal("XAI") == -1);
 }
 
 #endif
